@@ -5,4 +5,25 @@
     <option value="GBP">GBP</option>
 </select>
 
+<ng-container *ngIf="hasChoose">
+  <table>
+    <tr>
+        <th>Currency</th>
+        <th>Price</th>
+    </tr>
+    <tr>
+        <td>BTC</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Ether</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>ae</td>
+        <td></td>
+    </tr>
+  </table>
+</ng-container>
+
 <router-outlet></router-outlet>

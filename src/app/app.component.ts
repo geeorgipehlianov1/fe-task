@@ -12,7 +12,10 @@ export class AppComponent {
 
   constructor(private route: Router) { }
 
+  hasChoose: boolean = true;
+
   onChange(event: any): void {
+    this.hasChoose = false;
     if(event.target.value === 'BGN') {
       this.route.navigate(['/BGN'])
     } else if(event.target.value === 'EUR') {
