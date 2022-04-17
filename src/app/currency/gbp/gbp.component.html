@@ -1,1 +1,18 @@
-<p>gbp works!</p>
+<table>
+    <tr>
+        <th>Currency</th>
+        <th>Price</th>
+    </tr>
+    <tr>
+        <td>BTC</td>
+        <td *ngIf="!!gbp && !!btc">{{(gbp.price * btc.price).toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td>Ether</td>
+        <td *ngIf="!!gbp && !!ether">{{(gbp.price * ether.price).toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td>ae</td>
+        <td *ngIf="!!gbp && !!ae">{{(gbp.price * ae.price).toFixed(2)}}</td>
+    </tr>
+</table>

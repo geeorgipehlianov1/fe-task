@@ -1,1 +1,18 @@
-<p>bgn works!</p>
+<table>
+    <tr>
+        <th>Currency</th>
+        <th>Price</th>
+    </tr>
+    <tr>
+        <td>BTC</td>
+        <td *ngIf="!!bgn && !!btc">{{(bgn.price * btc.price).toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td>Ether</td>
+        <td *ngIf="!!bgn && !!ether">{{(bgn.price * ether.price).toFixed(2)}}</td>
+    </tr>
+    <tr>
+        <td>ae</td>
+        <td *ngIf="!!bgn && !!ae">{{(bgn.price * ae.price).toFixed(2)}}</td>
+    </tr>
+</table>
