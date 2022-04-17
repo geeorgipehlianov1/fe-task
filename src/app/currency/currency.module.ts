@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BgnComponent } from './bgn/bgn.component';
 import { EurComponent } from './eur/eur.component';
 import { GbpComponent } from './gbp/gbp.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -13,7 +14,8 @@ import { GbpComponent } from './gbp/gbp.component';
     GbpComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ]
 })
 export class CurrencyModule { }
