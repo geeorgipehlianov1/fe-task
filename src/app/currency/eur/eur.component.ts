@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { IAe } from 'interface/ae';
 import { IBtc } from 'interface/btc';
 import { IEther } from 'interface/ether';
@@ -19,7 +20,8 @@ export class EurComponent implements OnInit {
   constructor( private eurPrice: EurService,
     private ehterPrice: EtherService,
     private btcPrice: BtcService,
-    private aePrice: AeService) { }
+    private aePrice: AeService,
+    private title: Title) { }
 
     eur!: IEur;
     ether!: IEther;
@@ -27,6 +29,9 @@ export class EurComponent implements OnInit {
     ae!: IAe;
 
   ngOnInit(): void {
+
+    this.title.setTitle('EUR')
+
     this.eurPrice.getEurPrice().subscribe(data => {
       this.eur = data;
     })

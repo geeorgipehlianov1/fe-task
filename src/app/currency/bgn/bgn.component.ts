@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { IAe } from 'interface/ae';
 import { IBgn } from 'interface/bgn';
 import { IBtc } from 'interface/btc';
@@ -20,7 +21,8 @@ export class BgnComponent implements OnInit {
     private bgnPrice: BgnService,
     private ehterPrice: EtherService,
     private btcPrice: BtcService,
-    private aePrice: AeService) { }
+    private aePrice: AeService,
+    private title: Title) { }
 
     bgn!: IBgn;
     ether!: IEther;
@@ -28,6 +30,8 @@ export class BgnComponent implements OnInit {
     ae!: IAe;
 
   ngOnInit(): void {
+
+    this.title.setTitle('BGN')
 
     this.bgnPrice.getBgnPrice().subscribe(data => {
       this.bgn = data;
@@ -44,6 +48,7 @@ export class BgnComponent implements OnInit {
     this.aePrice.getAePrice().subscribe(data => {
       this.ae = data;
     })
+
 
     const bgnObs$ = interval(5000).pipe(
       mergeMap(() => this.bgnPrice.getBgnPrice()) 

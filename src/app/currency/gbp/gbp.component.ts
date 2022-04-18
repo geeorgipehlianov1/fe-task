@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { IAe } from 'interface/ae';
 import { IBtc } from 'interface/btc';
 import { IEther } from 'interface/ether';
@@ -19,7 +20,8 @@ export class GbpComponent implements OnInit {
   constructor( private gbpPrice: GbpService,
     private ehterPrice: EtherService,
     private btcPrice: BtcService,
-    private aePrice: AeService) { }
+    private aePrice: AeService,
+    private title: Title) { }
 
     gbp!: IGbp;
     ether!: IEther;
@@ -27,6 +29,10 @@ export class GbpComponent implements OnInit {
     ae!: IAe;
     
   ngOnInit(): void {
+
+
+    this.title.setTitle('GBP')
+
     this.gbpPrice.getGbpPrice().subscribe(data => {
       this.gbp = data;
     })
